@@ -1,0 +1,20 @@
+.container-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid black;
+    padding: 7px;
+    box-shadow: 0 4px 10px 2px gray;
+    margin-bottom: 5px;
+    z-index: 10;
+}
+.logo {
+    width: 15vw;
+    height: 10vw;
+}

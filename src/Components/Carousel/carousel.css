@@ -1,0 +1,17 @@
+.carousel-container {
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid black;
+}
+.carousel > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.carousel> div > p {
+    text-align: center;
+    font-weight: bold;
+    color: rgba(174, 0, 255, 0.432);
+    text-shadow: 1px 1px black;
+}

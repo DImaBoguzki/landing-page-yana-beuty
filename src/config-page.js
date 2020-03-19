@@ -1,0 +1,9 @@
+export const PHONE='054-8059269';
+export const WHATSAPP='https://api.whatsapp.com/send?phone=+972545738557';
+export const WAZE='waze://?ll=32.99586873,35.29267788';
+export const EMAIL='';
+export const ANDROID='https://play.google.com/store/apps/details?id=co.il.tormahir.yanasalon&gl=IL';
+export const IOS='https://apps.apple.com/us/app/yana-beauty-salon/id1444388148';
+export const YOUTUBE='';
+export const FACEBOOK='https://www.facebook.com/Yana-Beauty-Salon-442198062906393/?eid=ARARiZVK_ao_9PY3TKbV3r-9iZEu8qm3RvVDY2XGGExC2WUWIb9sjBgwWsHAdbbccSt0vYuhWaFTZJRz&timeline_context_item_type=intro_card_work&timeline_context_item_source=1492675109&fref=tag';
+export const INSTAGRAM='https://www.instagram.com/yana_beuaty/';
