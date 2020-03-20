@@ -10,44 +10,54 @@ class Slider extends Component {
             fade: 'in', // in, out, reset
             fadeTime: 250,
             delay: 5000,
+            loadImg: false
         }
-        this.interval=null;
+        this.timeOut=null;
     }
     componentDidMount() {
-        this.interval=setInterval(this.handleIncrease,this.state.delay);
+        this.timeOut=setTimeout(this.handleIncrease,this.state.delay);
     }
     componentWillUnmount() {
-        clearInterval(this.interval);
+        clearTimeout(this.timeOut);
     }
     handleIncrease = async () => {
         //out
-        this.setState({fade: 'out'});
+        this.setState({fade: 'out',loadImg:false});
         await setDelay(this.state.fadeTime/2);
         //reset
         this.setState({fade:'reset'})
         await setDelay(this.state.fadeTime/2);
         // in
         if((this.props.children.length-1)===this.state.index)
-            this.setState({index:0, fade:'in'})
+            this.setState({index:0})
         else 
-            this.setState({index:this.state.index+1,fade:'in'});
+            this.setState({index:this.state.index+1});
+        while(this.state.loadImg===false){
+            await setDelay(50);
+        }
+        this.setState({fade:'in'});
+        this.timeOut=setTimeout(this.handleIncrease,this.state.delay);
         await setDelay(this.state.delay-this.state.fadeTime);
     }
     handleChngeIndex=async(i)=>{
-        this.restartInerval();
         if(this.state.index===i) return;
         //out
-        this.setState({fade: 'out'});
+        clearTimeout(this.timeOut);
+        this.setState({fade: 'out',loadImg: false});
         await setDelay(this.state.fadeTime/2);
         //reset
         this.setState({fade:'reset'})
         await setDelay(this.state.fadeTime/2);
-        this.setState({index:i, fade: 'in'});
+        this.setState({index:i})
+        while(this.state.loadImg===false){
+            await setDelay(50);
+        }
+        this.setState({fade:'in'});
+        this.timeOut=setTimeout(this.handleIncrease,this.state.delay);
         await setDelay(this.state.delay-this.state.fadeTime);
     }
-    restartInerval() {
-        clearInterval(this.interval);
-        this.interval=setInterval(this.handleIncrease,this.state.delay);
+    handleOnLoadImg=()=>{
+        this.setState({loadImg:true});
     }
     render() { 
         const fadeIn={
@@ -75,10 +85,10 @@ class Slider extends Component {
         return (
             <div className="slider-container">
                 <div className="slider" style={this.state.fade==='in' ? fadeIn : this.state.fade==='out' ? fadeOut : reset}>
-                    {this.props.children[this.state.index]}
+                    {React.cloneElement(this.props.children[this.state.index], { onLoad: ()=>this.handleOnLoadImg(this.props.children[this.state.index]), })}
                 </div>
                 <div className='nav-slider'>
-                        {ell}
+                    {ell}
                 </div>
             </div>
         );

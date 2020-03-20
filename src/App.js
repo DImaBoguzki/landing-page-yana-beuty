@@ -51,14 +51,14 @@ const App = () => {
       <div className='hiden-img'/>
       <div className="center">
       <Slider>
-          <div><img alt="1" src={img1}/></div>
-          <div><img alt="2" src={img2}/></div>
-          <div><img alt="3" src={img3}/></div>
-          <div><img alt='4' src={img4}/></div>
-          <div><img alt='5' src={img5}/></div>
-          <div><img alt='6' src={img6}/></div>
-          <div><img alt='7' src={img7}/></div>
-          <div><img alt='8' src={img8}/></div>
+          <img alt="1" src={img1}/>
+          <img alt="2" src={img2}/>
+          <img alt="3" src={img3}/>
+          <img alt='4' src={img4}/>
+          <img alt='5' src={img5}/>
+          <img alt='6' src={img6}/>
+          <img alt='7' src={img7}/>
+          <img alt='8' src={img8}/>
         </Slider>
         <Carousel>
           <div><p>פדיקור</p></div>
@@ -71,10 +71,10 @@ const App = () => {
           <p> לפטרים שלחו לי <a className="txt" href={WHATSAPP} target="_blank" rel="noopener noreferrer">הודעה</a></p>
         </div>
         <Slider>
-          <div><img alt="1.1" src={party1}/></div>
-          <div><img alt="2.2" src={party2}/></div>
-          <div><img alt="3.3" src={party3}/></div>
-          <div><img alt='4.4' src={party4}/></div>
+          <img alt="1.1" src={party1}/>
+          <img alt="2.2" src={party2}/>
+          <img alt="3.3" src={party3}/>
+          <img alt='4.4' src={party4}/>
         </Slider>
         <div className='contact-about'>
           <About/>
