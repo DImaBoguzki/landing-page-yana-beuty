@@ -1,5 +1,5 @@
 export const PHONE='054-8059269';
-export const WHATSAPP='https://api.whatsapp.com/send?phone=+972545738557';
+export const WHATSAPP='https://api.whatsapp.com/send?phone=+972548059269';
 export const WAZE='waze://?ll=32.99586873,35.29267788';
 export const EMAIL='';
 export const ANDROID='https://play.google.com/store/apps/details?id=co.il.tormahir.yanasalon&gl=IL';

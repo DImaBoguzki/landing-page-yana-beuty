@@ -8,7 +8,7 @@ class Slider extends Component {
         this.state = {
             index: 0,
             fade: 'in', // in, out, reset
-            fadeTime: 200,
+            fadeTime: 250,
             delay: 5000,
         }
         this.interval=null;
@@ -30,9 +30,8 @@ class Slider extends Component {
         if((this.props.children.length-1)===this.state.index)
             this.setState({index:0, fade:'in'})
         else 
-            this.setState({index:this.state.index+1,fade:'in'})
+            this.setState({index:this.state.index+1,fade:'in'});
         await setDelay(this.state.delay-this.state.fadeTime);
-        this.setState({count:this.state.count+1})
     }
     handleChngeIndex=async(i)=>{
         this.restartInerval();
@@ -62,7 +61,7 @@ class Slider extends Component {
             transition: `all ${this.state.fadeTime}ms ease-in-out`,
         }
         const reset = {
-            opacity: 1,
+            opacity: 0,
             transform: 'translateX(100%)',  
         }
         // mav of slider
